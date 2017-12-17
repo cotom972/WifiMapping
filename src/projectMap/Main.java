@@ -3,7 +3,8 @@ package projectMap;
 import java.io.File;
 import java.util.ArrayList;
 
-import javax.vecmath.*;
+import javax.vecmath.Point3d;
+ 
 
 public class Main {
 	
@@ -27,8 +28,8 @@ private static final String FILE_NAME_FILTER_MAC_DUPlICATES = "Filtered out MACs
 		File[] filesCsv = FileHandler.readDirFiles(inputDir,".csv");
 		
 	//	--------------------------------------- List All Wifis ----------------------------------------------:
-		WifiList allWifis = CsvFile.csvToWifiList(filesCsv[0]);
-		
+		WifiList allWifis = new WifiList(CsvFile.csvToWifiList(filesCsv[0]));
+
 	// 	------------------------------------- List top 10 Wifis ---------------------------------------------:
 		allWifis.filterMacDuplicates();
 		allWifis.sortBySignal();

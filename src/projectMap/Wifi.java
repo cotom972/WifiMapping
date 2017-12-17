@@ -28,21 +28,21 @@ public class Wifi implements Comparable<Wifi>{
 
 	
 	// ------------------------------------------ Constructors -----------------------------------------------:
-/**
- 	* Constructor of Wifi object.
- * @param mac - Mac Address
- * @param ssid - SSID of wifi.
- * @param authMode - AuthMode.
- * @param firstSeen - Time and Date when wifi was listed.
- * @param channel - Channel of wifi.
- * @param rssi - RSSI - Signal's strength of wifi.
- * @param lat - Geo: latitude.
- * @param lon - Geo: longitude
- * @param alt - Geo: Altitude.
- * @param accuracy - Accuracy of when the wifi was measured.
- * @param type - Type of wifi (WIFI/3gp/etc).
- * @throws Exception - Throws exception if one of the variables aren't in right format. (Specifically in parsing time and date to 'Date' object).
- */
+	/**
+	* Constructor of Wifi object.
+	 * @param mac - Mac Address
+	 * @param ssid - SSID of wifi.
+	 * @param authMode - AuthMode.
+	 * @param firstSeen - Time and Date when wifi was listed.
+	 * @param channel - Channel of wifi.
+	 * @param rssi - RSSI - Signal's strength of wifi.
+	 * @param lat - Geo: latitude.
+	 * @param lon - Geo: longitude
+	 * @param alt - Geo: Altitude.
+	 * @param accuracy - Accuracy of when the wifi was measured.
+	 * @param type - Type of wifi (WIFI/3gp/etc).
+	 * @throws Exception - Throws exception if one of the variables aren't in right format. (Specifically in parsing time and date to 'Date' object).
+	 */
 	public Wifi(String mac,String ssid,String authMode,String firstSeen, double channel,double rssi, double lat, double lon, double alt, double accuracy,String type) throws Exception {
 		
 		this.mac = new Mac(mac);
@@ -128,7 +128,6 @@ public class Wifi implements Comparable<Wifi>{
 	public double getAccuracy() {
 		return this.accuracy;
 	}
-
 
 	/**
 	 * 
