@@ -3,7 +3,6 @@ package projectMap;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Date;
 
 import javax.vecmath.Point3d;
@@ -156,8 +155,8 @@ public class Wifi implements Comparable<Wifi>{
 	}
 	
 	/**
-	 * 
-	 * @return	Signal's strength (RSSI) - Poor(-100)<RSSI<Strong(0)
+	 * Gets the wifi's RSSI (Signal strength).
+	 * @return	Signal's strength (RSSI): Poor({@literal-}100){@literal<}RSSI{@literal<}Strong(0)
 	 */
 	public double getRssi() {
 		return this.rssi;
@@ -253,8 +252,8 @@ public class Wifi implements Comparable<Wifi>{
 
 	/**
 	 * This function compares 2 Wifi objects by their MAC address.
-	 * @param o1
-	 * @param o2
+	 * @param o1 - First Wifi to compare with.
+	 * @param o2 - Second Wifi to compare to.
 	 * @return returns 1 if o1 is "bigger" or has the same mac address but stronger signal. 0 if both same, 
 	 */
 	public int compareByMac(Wifi o1, Wifi o2) {

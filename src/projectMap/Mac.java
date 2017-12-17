@@ -47,7 +47,6 @@ public class Mac {
 		return this.mac;
 	}
 	
-	
 	/**
 	 * Returns mac's address in a String type.
 	 */
