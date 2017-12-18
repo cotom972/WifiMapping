@@ -33,6 +33,7 @@ private static final String FILE_NAME_FILTER_MAC_DUPlICATES = "Filtered out MACs
 	// 	------------------------------------- List top 10 Wifis ---------------------------------------------:
 		allWifis.filterMacDuplicates();
 		allWifis.sortBySignal();
+		KmlFile.createKmlFile(allWifis, outputDir+"\\all Wifis");
 		WifiList topTen = new WifiList(new ArrayList<Wifi>(allWifis.WifiList.subList(0, 10)));
 		// Test:
 		allWifis.printWifiList("filterMacDuplicates, sortBySignal");

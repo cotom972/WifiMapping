@@ -19,5 +19,7 @@
 	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/jaxb-impl-2.1.17.jar" sourcepath="C:/WifiMapping/ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/jsr173_api-1.0.jar" sourcepath="ExternalFiles/Jars/Basic/jsr173_api-1.0.jar"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="ExternalFiles/Jars/junit5-master.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

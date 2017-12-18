@@ -3,10 +3,66 @@
     <ns2:Document>
         <ns2:name>Wifi's</ns2:name>
         <ns2:Placemark>
-            <ns2:name>(7c:b7:33:ea:a4:2e) HOTFiber-5275</ns2:name>
+            <ns2:name>(14:af:db:31:66:f2) BezeqFree</ns2:name>
             <ns2:open>1</ns2:open>
             <ns2:Point>
-                <ns2:coordinates>34.77270189,32.06148439,46.0</ns2:coordinates>
+                <ns2:coordinates>34.8168454017996,32.1135442546896,20.488915976034</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(50:8f:4c:42:05:7a) avishp</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8137718432671,32.118963071938,46.342679770152</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(14:9d:09:80:03:09) HUAWEI-0309</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8169046565604,32.1140545893439,29.6139506713769</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(4c:60:de:51:a9:3e) photo</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8186399964591,32.109346472928,-2.66899358804709</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(02:08:22:c4:8d:fe) X5pro</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8168454017996,32.1135442546896,20.45323573053</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(c4:10:8a:b3:e1:a3) </ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8230752240535,32.1646151612168,41.2415661290054</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(6c:3b:6b:c4:7e:6b) Egged.co.il</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8230097194992,32.163708418643,42.5582821217467</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(58:70:c6:f7:ed:9d) YICarCam_f7ed9d</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8302705469209,32.1784152362709,42.8502680486441</ns2:coordinates>
+            </ns2:Point>
+        </ns2:Placemark>
+        <ns2:Placemark>
+            <ns2:name>(00:1e:42:14:29:bb) FREE WIFI</ns2:name>
+            <ns2:open>1</ns2:open>
+            <ns2:Point>
+                <ns2:coordinates>34.8282346626042,32.2130442701395,43.3369323057893</ns2:coordinates>
             </ns2:Point>
         </ns2:Placemark>
     </ns2:Document>

@@ -2,12 +2,5 @@
 <ns2:kml xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:ns2="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
     <ns2:Document>
         <ns2:name>Wifi's</ns2:name>
-        <ns2:Placemark>
-            <ns2:name>(60:e3:27:d9:e8:32) Roomer-DEV</ns2:name>
-            <ns2:open>1</ns2:open>
-            <ns2:Point>
-                <ns2:coordinates>34.77269978,32.06148645,47.0</ns2:coordinates>
-            </ns2:Point>
-        </ns2:Placemark>
     </ns2:Document>
 </ns2:kml>

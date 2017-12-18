@@ -59,7 +59,14 @@ public class Wifi implements Comparable<Wifi>{
 			this.date = SIMPLE_DATE_FORMAT.parse(firstSeen);
 		}
 		catch(ParseException e) {
-			throw new Exception("Could not parse string time to date object.");
+			try
+			{
+				this.date = new SimpleDateFormat("yy-mm-dd hh:mm:ss").parse(firstSeen);
+			}
+			catch(ParseException e1) {
+				throw new Exception("Could not parse string time to date object.");
+			}
+
 		}
 	}
 
@@ -87,7 +94,14 @@ public class Wifi implements Comparable<Wifi>{
 				this.date = SIMPLE_DATE_FORMAT.parse(firstSeen);
 			}
 			catch(ParseException e) {
-				throw new Exception("Could not parse string time to date object.");
+				try
+				{
+					this.date = new SimpleDateFormat("yy-mm-dd hh:mm:ss").parse(firstSeen);
+				}
+				catch(ParseException e1) {
+					throw new Exception("Could not parse string time to date object.");
+				}
+
 			}
 		}
 	}
@@ -115,7 +129,14 @@ public class Wifi implements Comparable<Wifi>{
 				this.date = SIMPLE_DATE_FORMAT.parse(firstSeen);
 			}
 			catch(ParseException e) {
-				throw new Exception("Could not parse string time to date object.");
+				try
+				{
+					this.date = new SimpleDateFormat("yy-mm-dd hh:mm:ss").parse(firstSeen);
+				}
+				catch(ParseException e1) {
+					throw new Exception("Could not parse string time to date object.");
+				}
+
 			}
 		}
 	}
@@ -166,7 +187,7 @@ public class Wifi implements Comparable<Wifi>{
 	 * @return AuthMode of wifi.
 	 */
 	public String getAuthMode() {
-		return this.toString();
+		return this.authMode;
 	}
 	
 	/**
