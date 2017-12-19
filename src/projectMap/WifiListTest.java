@@ -40,7 +40,7 @@ public class WifiListTest {
 		
 		// Check if list is sorted by signal in descending order.
 		double tmpSignal = wifis.getArrayList().get(0).getRssi();
-		for(Wifi wifi: wifis.getArrayList().subList(1, wifis.getSize()-1)) {
+		for(Wifi wifi: wifis.getArrayList().subList(1, wifis.getSize())) {
 			assertTrue(wifi.getRssi()<=tmpSignal);
 			tmpSignal = wifi.getRssi();
 		}
