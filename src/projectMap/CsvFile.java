@@ -1,7 +1,6 @@
 package projectMap;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class CsvFile extends FileHandler {
 	        fileWriter.append(NEW_LINE_SEPERATOR);
 	        
 	        // Write Wifis to file:
-	        for(Wifi wifi: WifiList.WifiList) {
+	        for(Wifi wifi: WifiList.getArrayList()) {
 	        	fileWriter.append(String.valueOf(wifi.getMac().getAddress()));
 	        	fileWriter.append(COMMA_DELIMITER);
 	        	fileWriter.append(String.valueOf(wifi.getSsid()));

@@ -53,5 +53,15 @@ public class Mac {
 	public String toString() {
 		return this.mac;
 	}
+
+	/**
+	 * 
+	 * @param Mac to be compared to
+	 * @return True if both has the same address, False otherwise.
+	 */
+	public boolean equalTo(Mac other) {
+		return (this.getAddress().compareToIgnoreCase(other.getAddress())==0);
+	}
+
 }
 

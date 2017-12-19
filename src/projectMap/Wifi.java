@@ -280,5 +280,20 @@ public class Wifi implements Comparable<Wifi>{
 		return o1.getMac().getAddress().compareToIgnoreCase(o2.getMac().getAddress());
 	}
 
-	
+	public boolean equalTo(Wifi other) {
+		return (
+				this.mac.equalTo(other.getMac()) &&
+				this.accuracy == other.accuracy &&
+				this.authMode == other.authMode &&
+				this.date.compareTo(other.date)==0 &&
+				this.Point3d.x == other.Point3d.x &&
+				this.Point3d.y == other.Point3d.y &&
+				this.Point3d.z == other.Point3d.z &&
+				this.accuracy == other.accuracy &&
+				this.rssi == other.rssi &&
+				this.ssid.contentEquals(other.ssid) &&
+				this.type.contentEquals(other.type)	&&
+				this.getChannel()==other.getChannel()
+				);
+	}
 }

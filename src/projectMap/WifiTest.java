@@ -1,19 +1,11 @@
 package projectMap;
 
 import static org.junit.Assert.*;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.vecmath.Point3d;
-
-import org.hamcrest.core.IsInstanceOf;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
-
-import sun.security.jca.GetInstance.Instance;
 
 public class WifiTest {
 	
@@ -117,5 +109,29 @@ public class WifiTest {
 	    Assert.assertNotNull(wifi.getPoint3d());  //Checks for null
 	    assertTrue(date.compareTo(wifi.getDate())==0);
 	}
+	
+	@Test
+	public void testEqualTo() throws Exception {
+		Wifi o1 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi o2 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		
+		Wifi omac = new Wifi("different", ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi ossid = new Wifi(mac, "different", authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi oauthMode = new Wifi(mac, ssid, "different", firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi ofirstSeen = new Wifi(mac, ssid, authMode, "13/11/2017 17:43", channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi ochannel = new Wifi(mac, ssid, authMode, firstSeen, 3, rssi, lat, lon, alt, accuracy, type);
+		Wifi orssi = new Wifi(mac, ssid, authMode, firstSeen, channel, 100, lat, lon, alt, accuracy, type);
+		Wifi oaccuracy = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, 100, type);
+		Wifi otype = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, "different");
+		assertTrue(o1.equalTo(o2));
+		assertFalse(o1.equalTo(omac));
+		assertFalse(o1.equalTo(ossid));
+		assertFalse(o1.equalTo(oauthMode));
+		assertFalse(o1.equalTo(ofirstSeen));
+		assertFalse(o1.equalTo(ochannel));
+		assertFalse(o1.equalTo(orssi));
+		assertFalse(o1.equalTo(oaccuracy));
+		assertFalse(o1.equalTo(otype));
 
+	}
 }

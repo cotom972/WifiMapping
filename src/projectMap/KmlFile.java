@@ -16,7 +16,7 @@ public class KmlFile extends FileHandler {
 	public static void createKmlFile(WifiList wifis, String fileName) throws IOException {
 		Kml kml = new Kml();
 		Document document = kml.createAndSetDocument().withName("Wifi's");
-		for(Wifi wifi: wifis.WifiList) {
+		for(Wifi wifi: wifis.getArrayList()) {
 		document.createAndAddPlacemark().withName("("+wifi.getMac().getAddress()+") "+wifi.getSsid()).withOpen(true).createAndSetPoint().addToCoordinates(wifi.getLon(), wifi.getLat(), wifi.getAlt());
 		}
 		kml.setFeature(document);
