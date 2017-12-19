@@ -1,6 +1,7 @@
 package projectMap;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -93,5 +94,26 @@ public class CsvFile extends FileHandler {
 		finally {
 		}
 		return new WifiList(wifiList);
+	}
+
+	public static ArrayList<Wifi> csvToWifiArrayList(File f) throws Exception{
+			
+			ArrayList<Wifi> wifiList = new ArrayList<Wifi>();
+			
+			try {
+				Scanner inputStream = new Scanner(f);
+				inputStream.nextLine();	// Skip first line
+				inputStream.nextLine();	// Skip first line
+
+				while(inputStream.hasNext()) {
+					String query = inputStream.nextLine();
+					String[] data = query.split(COMMA_DELIMITER);
+					wifiList.add(new Wifi(data));
+				}
+				inputStream.close();
+			}
+			finally {
+			}
+			return wifiList;
 	}
 }

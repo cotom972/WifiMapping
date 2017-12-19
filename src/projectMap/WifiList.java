@@ -17,8 +17,8 @@ import javax.vecmath.Point3d;
  */
 public class WifiList {
 	
-	ArrayList<Wifi> WifiList;
-	
+	private ArrayList<Wifi> WifiList;
+	private int size;
 	
 	// ------------------------------------------ Constructors -----------------------------------------------:
 	/**
@@ -27,6 +27,7 @@ public class WifiList {
 	 */
 	public WifiList(ArrayList<Wifi> wifis) {
 		this.WifiList = new ArrayList<Wifi>(wifis);
+		this.size = this.WifiList.size();
 	}
 	/**
 	 * Copy Constructor.
@@ -37,6 +38,7 @@ public class WifiList {
 		for(Wifi wifi: other.WifiList) {
 			this.WifiList.add(new Wifi(wifi));
 		}
+		this.size = this.WifiList.size();
 	}
 	
 	// --------------------------------- Filter and manipluation functions : ---------------------------------:
@@ -176,7 +178,24 @@ public class WifiList {
 	}
 	
 	
+	// -------------------------------------------- Getters --------------------------------------------------:
+	/**
+	 * 
+	 * @return Gets the size of list.
+	 */
+	public int getSize() {
+		return this.size;
+	}
+	/**
+	 * Gets the ArrayList of WifiList obj.
+	 * @return Gets the ArrayList of WifiList obj.
+	 */
+	public ArrayList<Wifi> getArrayList(){
+		return this.WifiList;
+	}
+	
 	// -------------------------------------------------------------------------------------------------------:
+
 	/**
 	 * Prints MAC address and SSID of all wifis in list
 	 * @param header - Header
@@ -261,7 +280,6 @@ public class WifiList {
 				return Double.compare(o1.getRssi(), o2.getRssi());
 		}
 	}
-
 	/**
 	 * Calculate distance between two points in latitude and longitude taking
 	 * into account height difference. If you are not interested in height

@@ -111,8 +111,11 @@ public class WifiTest {
 	}
 
 	@Test
-	public void testGetDate() {
-		fail("Not yet implemented");
+	public void testGetDate() throws Exception {
+		Date date = Wifi.SIMPLE_DATE_FORMAT.parse(firstSeen);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+	    Assert.assertNotNull(wifi.getPoint3d());  //Checks for null
+	    assertTrue(date.compareTo(wifi.getDate())==0);
 	}
 
 }

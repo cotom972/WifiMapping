@@ -81,6 +81,16 @@ private static final String FILE_NAME_FILTER_MAC_DUPlICATES = "Filtered out MACs
 		
 	}
 	
+	
+// ------------ Getters for JUnit to test private variables ------------ //
+	public static String getInputDir() {
+		return inputDir;
+	}
+	
+	public static String outputDir() {
+		return outputDir;
+	}
+	
 }
 
 
