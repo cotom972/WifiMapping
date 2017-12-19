@@ -27,7 +27,6 @@ public class KmlFile extends FileHandler {
 		DateFormat df = new SimpleDateFormat(kmlTimeFormat);
 		ts.withWhen(df.format(wifi.getDate()));
 		document.createAndAddPlacemark().withName("("+wifi.getMac().getAddress()+") "+wifi.getSsid()).withTimePrimitive(ts).withOpen(true).createAndSetPoint().addToCoordinates(wifi.getLon(), wifi.getLat(), wifi.getAlt());
-		
 		}
 		kml.setFeature(document);
 		kml.marshal(new File(fileName+".kml"));
