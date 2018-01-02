@@ -31,8 +31,6 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
 	private String _wifiNetworks; 
 	
 	// --------------------------------------- Constructors --------------------------------------------------:
-
-
 	public DBWifiTimeStamp(Date date,WifiList wifis) throws Exception {
 		
 		WifiList resultWifiList = new WifiList(wifis);
@@ -113,8 +111,6 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
 	}
 	
 	// ---------------------------------------------- Geo ----------------------------------------------------:
-
-
 	public DBWifiTime fetchSimilarWifiTimeStampsFromDB(DBWifiTime db ) throws Exception {
 		db.sortBySimilarityTo(this);// sort by similarity
 		ArrayList<DBWifiTimeStamp> resultList = new ArrayList<DBWifiTimeStamp>();
@@ -129,6 +125,7 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
 		
 		return result;
 	}
+
 	// -------------------------------------------------------------------------------------------------------:
 	public boolean hasMac(Mac mac) {
 		for(Wifi wifi: this._wifis.getArrayList()) {
@@ -165,7 +162,6 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
 		}
 		return this._macList;
 	}
-	
 	public ArrayList<Mac> generateMacList(){
 		this._macList = new ArrayList<Mac>();
 		ArrayList<Mac> result = new ArrayList<Mac>();
@@ -182,7 +178,6 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
 		this._location = point;
 	}
 
-	
 	// ----------------------------------------------- Prints ------------------------------------------------:
 	public String getTimeStamp() {
 		return SIMPLE_DATE_FORMATER.format(this._timeStamp);
@@ -238,9 +233,7 @@ public class DBWifiTimeStamp implements Comparable<DBWifiTimeStamp>{
         System.out.println(result+"\n");
 	}
 
-	
 	// ----------------------------------------- Sorts & Comparators -----------------------------------------:
-
 	static class SimilarityComparator implements Comparator<DBWifiTimeStamp>{
 		DBWifiTimeStamp _dbWifiTimeStamp;
 		public SimilarityComparator(DBWifiTimeStamp wifiTimeStamp) throws Exception {

@@ -51,9 +51,6 @@ public class WifiList {
 		}
 		this.size = this.WifiList.size();
 	}
-	
-	// ---------------------------------------------- DB  ----------------------------------------------------:
-	
 
 	// --------------------------------------- Geo Location functions : --------------------------------------:
 	public void estimatedMacLocations() {
@@ -77,7 +74,6 @@ public class WifiList {
 		this.WifiList = result;
 	}
 
-	
 // ------------------------------------------- Sort functions  -------------------------------------------:
 	/** 
 	 * Sorts list by signal.
@@ -422,7 +418,6 @@ public class WifiList {
 			this.addWifi(wifi);
 		}
 	}
-	
 	/**
 	 * Adds a Wifi to the WifiList. (adds it to the Arraylist and increments size by 1).s
 	 * @param wifi	Wifi to add.

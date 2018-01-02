@@ -1,6 +1,6 @@
 package projectMap;
 
-public class Signal extends SignalExtras {
+public class Signal {
 	
 	private double  _strength;
 	private final static double HIGH_SIGNAL_BOUND = 0;
@@ -46,7 +46,6 @@ public class Signal extends SignalExtras {
 	}
 
 	// ------------------------------------- WifiMapping Functions : ------------------------------------------:
-
 	/**
 	 * Calculates and returns signal's weight by: 1/signal^2.
 	 * @param signal Signal to weigh

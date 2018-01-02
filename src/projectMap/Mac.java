@@ -7,6 +7,7 @@ public class Mac{
 
 	private String mac;
 	
+	// ----------------------------------- Constructors ---------------------------------------------:
 	/** 
 	 * Constructs a new Mac object
 	 * @param mac
@@ -35,6 +36,7 @@ public class Mac{
 		this.mac = other.mac;
 	}
 	
+	// ------------------------------------ Functions: ----------------------------------------------:
 	/**
 	 * Validates given MAC  address
 	 * Validates given MAC  address

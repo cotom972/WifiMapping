@@ -76,7 +76,6 @@ public class Geo implements Comparable<Geo> {
 	}
 		
 	//------------------------------------ Algo 2 ----------------------------------------//
-	
 	public static Point3d estimateMacLocationWith(Wifi originalWifi, WifiList externalList) throws Exception{
 		
 		
@@ -130,10 +129,7 @@ public class Geo implements Comparable<Geo> {
 		return result;
 	}
 	
-
-
 	//------------------------------------ Algo 2 ----------------------------------------//
-
 	/**
 	 * Caclulates similarity between 2 WifiTimeStamps / DBrows.
 	 * 1. To compare 2 DBWifiTimeStamps there must be a minimum of same wifis in both TimeStamps.
@@ -165,7 +161,6 @@ public class Geo implements Comparable<Geo> {
 		}
 		return result;
 	}	
-	
 	public static Point3d estimateWifiTimeStampLocations(DBWifiTime db, DBWifiTimeStamp source) throws Exception {
 	
 		DBWifiTime relevantDB = db.fetchSimilarWifiTimeStampsFromDB(source); // Fetch similar rows
@@ -188,9 +183,8 @@ public class Geo implements Comparable<Geo> {
 		result = new Point3d(lon/weight,lat/weight,alt/weight);
 		return result;
 	}
-	//-------------------------------- Algo 2 Extended -----------------------------------//
 	
-
+	//-------------------------------- Algo 2 Extended -----------------------------------//
 	/**
 	 * Caculates similarity between 2 given Wifis.
 	 * @param o1 First wifi to compare.
@@ -206,7 +200,6 @@ public class Geo implements Comparable<Geo> {
 		result = (ALGO2_NORM/(Math.pow(difSignal, ALGO2_SIG_DIF)*Math.pow(o1.getSignal().getStrength(), ALGO2_POWER)));
 		return result;
 	}
-
 	public static ArrayList<Wifi> sortByDiff(WifiList wifis, Wifi originalWifi) throws Exception {
 		ArrayList<Wifi> result = new ArrayList<Wifi>();
 		for(Wifi wifi: wifis.getArrayList()) {	// Copy ArrayList<Wifi> to one that will be sorted.
@@ -215,7 +208,8 @@ public class Geo implements Comparable<Geo> {
 		Collections.sort(result,new SimilarityComparator(originalWifi));
 		return result;
 	}
-		//------------------------------- Other Class Functions ------------------------------//
+	
+	//------------------------------- Other Class Functions ------------------------------//
 	@Override
 	public int compareTo(Geo o) {
 		if(this._similarity>o._similarity)

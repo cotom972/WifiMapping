@@ -73,8 +73,6 @@ public class FileHandler {
 	};
 	
 	//	-------------------------------- Functions ----------------------------------:
-	
-	
 	/**
 	 * Reads a specific file from directory.
 	 * @param path - Path of file.

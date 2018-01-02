@@ -146,22 +146,22 @@ public class DBWifiTime{
 	public ArrayList<DBWifiTimeStamp> getWifiTimeStamps() {
 		return this._DBList;
 	}
-
 	public void setWifiTimeStamps(ArrayList<DBWifiTimeStamp> newList) {
 		this._DBList = newList;
 	}
+	
 	// -------------------------------------------- Prints  --------------------------------------------------:
 	public void printAll() {
 		for(DBWifiTimeStamp timeStamp: this._DBList) {
 			timeStamp.printDBWifiTimeStamp();	
 		}
 	}
-
 	public void printSimilarityTo(DBWifiTimeStamp origin) {
 		for(DBWifiTimeStamp timeStamp: this.getWifiTimeStamps()) {
 			System.out.println(Geo.similarityBetween(timeStamp, origin));
 		}
 	}
+	
 	// --------------------------------------- Write To Files --------------------------------------------:
 	/**
 	 * Write current DBWifiTime to '.csv' file. 

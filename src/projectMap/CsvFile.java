@@ -29,7 +29,6 @@ public class CsvFile extends FileHandler {
 	}
 
 	// ---------------------------------- Read From CSV  ---------------------------------- //
-	
 	// CSV --> DBWifiTimeStamp
 	/**
 	 * Convert a specific row from a DBWifiTime csv file, to a DBWifiTimeStamp Object.
@@ -150,10 +149,8 @@ public class CsvFile extends FileHandler {
 		result.generateDates();
 		return result;
 	}
-
 	
-	// ---------------------------------- Write From CSV  ---------------------------------- //
-	
+	// ---------------------------------- Write To CSV  ---------------------------------- //
 	// WifiList --> CSV
 	/**
 	 * Writes a WifiList to a .csv file.
@@ -234,7 +231,6 @@ public class CsvFile extends FileHandler {
 			}
 		}
 	}
-	
 	// DBWifiTime --> CSV
 	public static void writeToDBWifiTimeCSV(String filename, DBWifiTime list) {
 		if(!filename.endsWith(".csv"))
@@ -310,32 +306,7 @@ public class CsvFile extends FileHandler {
 			}
 	}
 
-	
-	
 	// ------------------------------------------------------------------------------------- //
-
-	
-
-	
-	/**
-	 * Reads a .csv file and converts it into an ArrayList containing wifis.
-	 * @param f File to read.
-	 * @return an ArrayList
-	 * @throws Exception Error in reading file.
-	 */
-	
-
-	
-	// TODO:
-	public static WifiList readDBCsvToWifiList(File[] files) {
-		WifiList result = new WifiList();
-		
-		return result;
-	}
-	
-
-	
-	
 	public static ArrayList<Wifi> csvToWifiArrayList(File f) throws Exception{
 			
 			ArrayList<Wifi> wifiList = new ArrayList<Wifi>();
@@ -356,7 +327,6 @@ public class CsvFile extends FileHandler {
 			}
 			return wifiList;
 	}
-	
 	public static DBWifiTime readCsvToDB(File[] files) throws Exception {
 		
 		DBWifiTime result = null;
@@ -388,7 +358,6 @@ public class CsvFile extends FileHandler {
 		}
 		return result;
 	}
-	
 	public static HEADER csvHeader(String[] query) {
 		
 		HEADER result = HEADER.NOHEADER;
@@ -415,34 +384,4 @@ public class CsvFile extends FileHandler {
 		}
 		
 	}
-		
-	
-	
 
-//
-//// Check headers
-//switch(csvHeader(data)) {
-//case DBWIFITIME:
-//	query = inputStream.nextLine();
-//	data = query.split(COMMA_DELIMITER);
-//	wiggleScan = new WiggleScanner(data);
-//	break;
-//case WIGGLE:
-//	wiggleScan = new WiggleScanner(data);
-//	inputStream.nextLine();
-//	query = inputStream.nextLine();
-//	data = query.split(COMMA_DELIMITER);
-//	break;
-//case SINGLE_LIST_HEADER:
-//	
-//	
-//
-//}
-//
-//wifiList.add(new Wifi(data,wiggleScan));
-//while(inputStream.hasNext()) {
-//	query = inputStream.nextLine();
-//	data = query.split(COMMA_DELIMITER,-1);
-//	wifiList.add(new Wifi(data, wiggleScan));
-//}
-//inputStream.close();

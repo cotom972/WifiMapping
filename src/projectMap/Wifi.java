@@ -15,7 +15,6 @@ public class Wifi implements Comparable<Wifi>{
 	static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat(DATE_FORMAT);
 	static final SimpleDateFormat SIMPLE_DATE_FORMAT_WITH_SECONDS = new SimpleDateFormat(DATE_FORMAT_WITH_SECONDS);
 
-	
 	// Parameters given from an external query to the constructor:
 	private Mac mac;
 	private String ssid;
@@ -28,7 +27,6 @@ public class Wifi implements Comparable<Wifi>{
 	private Point3d Point3d;
 	private Date date; 
 	private String[] rawQuery;
-
 	private WiggleScanner scanDetails;
 	
 	// ------------------------------------------ Constructors -----------------------------------------------:
@@ -114,7 +112,6 @@ public class Wifi implements Comparable<Wifi>{
 			}
 		}
 	}
-	
 	public Wifi(String[] values) throws Exception{
 		this(values, null);
 	}
@@ -295,7 +292,6 @@ public class Wifi implements Comparable<Wifi>{
 	public boolean hasLocation() {
 		return (this.getPoint3d().x!=Main.NO_INPUT_INT && this.getPoint3d().y!=Main.NO_INPUT_INT && this.getPoint3d().z!=Main.NO_INPUT_INT);
 	}
-	
 	public WiggleScanner getScanDetails() {
 		return this.scanDetails;
 	}
@@ -371,7 +367,5 @@ public class Wifi implements Comparable<Wifi>{
 			return input;
 		}
 	}
-
-	
 
 }

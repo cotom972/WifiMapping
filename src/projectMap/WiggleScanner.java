@@ -12,7 +12,7 @@ public class WiggleScanner {
 	
 	
 	
-	
+	// ------------------------------------------- Constructors ---------------------------------------------:
 	public WiggleScanner() {
 		this._WigleWifi = "N/A";
 		this._appRelease = "N/A";
