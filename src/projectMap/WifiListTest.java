@@ -2,17 +2,21 @@ package projectMap;
 
 import static org.junit.Assert.*;
 import java.io.File;
+import java.util.Date;
+
 import org.junit.Test;
+
+import projectMap.FileHandler.FileReader;
 
 public class WifiListTest {
 	
-	private static final String inputTestDir = "C:\\WifiMapping\\ExternalFiles\\JUnit - Input test samples";
-
+	private static final String inputTestDir = "C:\\WifiMapping\\ExternalFiles\\JunitInput";
+	private static final String inputBigCsv = "C:\\\\WifiMapping\\\\ExternalFiles\\\\JunitInput\\Big.csv";
 
 	@Test
 	public void testWifiListWifiList() throws Exception {
-		File[] filesCsv = FileHandler.readDirFiles(inputTestDir ,".csv");
-		WifiList wifisFromWifiList = new WifiList(CsvFile.csvToWifiList(filesCsv[0]));
+		File[] filesCsv = FileHandler.readDirFiles(inputTestDir ,FileReader.CSVS);
+		WifiList wifisFromWifiList = new WifiList(CsvFile.readWiggleToWifiList(filesCsv[0]));
 		WifiList wifisFromArrayList = new WifiList(CsvFile.csvToWifiArrayList(filesCsv[0]));
 		
 		// check if WifiList null:
@@ -31,20 +35,39 @@ public class WifiListTest {
 			assertTrue(wifisFromArrayList.getArrayList().get(i).equalTo(wifisFromWifiList.getArrayList().get(i)));
 		}
 	}
-
 	@Test
 	public void testSortBySignal() throws Exception {
-		File[] filesCsv = FileHandler.readDirFiles(inputTestDir ,".csv");
-		WifiList wifis = new WifiList(CsvFile.csvToWifiList(filesCsv[0]));
+		File[] filesCsv = FileHandler.readDirFiles(inputTestDir ,FileReader.CSVS);
+		WifiList wifis = new WifiList(CsvFile.readWiggleToWifiList(filesCsv[0]));
 		wifis.sortBySignal();
 		
 		// Check if list is sorted by signal in descending order.
-		double tmpSignal = wifis.getArrayList().get(0).getRssi();
+		double tmpSignal = wifis.getArrayList().get(0).getSignal().getStrength();
 		for(Wifi wifi: wifis.getArrayList().subList(1, wifis.getSize())) {
-			assertTrue(wifi.getRssi()<=tmpSignal);
-			tmpSignal = wifi.getRssi();
+			assertTrue(wifi.getSignal().getStrength()<=tmpSignal);
+			tmpSignal = wifi.getSignal().getStrength();
 		}
 		
 	}
-
+	@Test
+	public void testRemoveAllMacs() throws Exception{
+		File[] filesCsv = FileHandler.readDirFiles(inputTestDir ,FileReader.CSVS);
+		WifiList wifis = new WifiList(CsvFile.readWiggleToWifiList(filesCsv[0]));
+		Mac mac = new Mac("c0:ac:54:f8:87:b6");
+		
+		assertTrue(wifis.getNumOfMac(mac)>0);
+		wifis.removeAllMacs(mac);
+		assertTrue(wifis.getNumOfMac(mac)==0);
+		
+	}
+	@Test
+	public void testSortByDate() throws Exception{
+		File[] filesCsv = FileHandler.readDirFiles(inputBigCsv ,FileReader.CSVS);
+		WifiList wifis = new WifiList(CsvFile.readWiggleToWifiList(filesCsv[0]));
+		Date previous = wifis.getArrayList().get(0).getDate();
+		for(Wifi wifi: wifis.getArrayList().subList(1, wifis.getArrayList().size())) {
+			assertTrue(wifi.getDate().compareTo(previous)>=1);
+			previous = wifi.getDate();
+		}
+	}
 }

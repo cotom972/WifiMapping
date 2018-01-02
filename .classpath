@@ -2,24 +2,24 @@
 <classpath>
 	<classpathentry kind="src" path="ExternalFiles/Jars"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-io-2.6-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-io-2.6-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-io-2.6-test-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-io-2.6-tests.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-io-2.6.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-lang3-3.7-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-lang3-3.7-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-lang3-3.7-test-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-lang3-3.7-tests.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/commons-lang3-3.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Addons/vecmath.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/activation-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar" sourcepath="ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/jaxb-api-2.1.jar" sourcepath="ExternalFiles/Jars/Basic/jaxb-api-2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/jaxb-impl-2.1.17.jar" sourcepath="C:/WifiMapping/ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="ExternalFiles/Jars/Basic/jsr173_api-1.0.jar" sourcepath="ExternalFiles/Jars/Basic/jsr173_api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-io-2.6-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-lang3-3.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-lang3-3.7-sources.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-lang3-3.7-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-lang3-3.7-tests.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/commons-lang3-3.7.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Addons/vecmath.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Basic/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Basic/JavaAPIforKml-2.2.1.jar" sourcepath="ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Basic/jaxb-api-2.1.jar" sourcepath="ExternalFiles/Jars/Basic/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Basic/jaxb-impl-2.1.17.jar" sourcepath="C:/WifiMapping/ExternalFiles/Jars/Basic/JavaAPIforKml-2.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/Basic/jsr173_api-1.0.jar" sourcepath="ExternalFiles/Jars/Basic/jsr173_api-1.0.jar"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="ExternalFiles/Jars/junit5-master.zip"/>
+	<classpathentry kind="lib" path="C:/WifiMapping/ExternalFiles/External Jars/junit5-master.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

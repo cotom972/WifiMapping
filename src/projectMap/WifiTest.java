@@ -25,14 +25,14 @@ public class WifiTest {
 
 	@Test
 	public void testWifiWifi() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		Date testDate = new SimpleDateFormat(Wifi.DATE_FORMAT).parse(firstSeen);
 	    assertEquals("Mac was not passed correctly to Wifi Object",mac, wifi.getMac().getAddress());
 	    assertEquals("SSID was not passed correctly to Wifi Object",ssid, wifi.getSsid());
 	    assertEquals("authMode was not passed correctly to Wifi Object",authMode, wifi.getAuthMode());
 	    assertEquals("firstSeen was not passed correctly to Wifi Object",testDate, wifi.getDate());
 	    assertEquals("channel was not passed correctly to Wifi Object",channel, wifi.getChannel(),0);
-	    assertEquals("rssi was not passed correctly to Wifi Object",rssi, wifi.getRssi(),0);
+	    assertEquals("rssi was not passed correctly to Wifi Object",rssi, wifi.getSignal().getStrength(),0);
 	    assertEquals("lat was not passed correctly to Wifi Object",lat, wifi.getPoint3d().y,0);
 	    assertEquals("lon was not passed correctly to Wifi Object",lon, wifi.getPoint3d().x,0);
 	    assertEquals("alt was not passed correctly to Wifi Object",alt, wifi.getPoint3d().z,0);
@@ -42,61 +42,61 @@ public class WifiTest {
 
 	@Test
 	public void testGetAccuracy() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(accuracy, wifi.getAccuracy(),0);
 	}
 
 	@Test
 	public void testGetMac() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(mac, wifi.getMac().getAddress());
 	}
 
 	@Test
 	public void testGetSsid() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(ssid, wifi.getSsid());
 	}
 
 	@Test
 	public void testGetRssi() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		assertEquals(rssi, wifi.getRssi(),0);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		assertEquals(rssi, wifi.getSignal().getStrength(),0);
 	}
 
 	@Test
 	public void testGetChannel() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(channel, wifi.getChannel(),0);
 	}
 
 	@Test
 	public void testGetLat() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(lat, wifi.getPoint3d().y,0);
 	}
 
 	@Test
 	public void testGetLon() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(lon, wifi.getPoint3d().x,0);
 	}
 
 	@Test
 	public void testGetAlt() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(alt, wifi.getPoint3d().z,0);
 	}
 
 	@Test
 	public void testGetType() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		assertEquals(type, wifi.getType());
 	}
 
 	@Test
 	public void testGetPoint3d() throws Exception {
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 		Point3d point = new Point3d(lon,lat,alt);
 	    Assert.assertNotNull(wifi.getPoint3d());  //Checks for null
 	    assertTrue(point.x == wifi.getPoint3d().x && point.y==wifi.getPoint3d().y && point.z == wifi.getPoint3d().z);	    
@@ -105,24 +105,24 @@ public class WifiTest {
 	@Test
 	public void testGetDate() throws Exception {
 		Date date = Wifi.SIMPLE_DATE_FORMAT.parse(firstSeen);
-		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
+		Wifi wifi = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
 	    Assert.assertNotNull(wifi.getPoint3d());  //Checks for null
 	    assertTrue(date.compareTo(wifi.getDate())==0);
 	}
 	
 	@Test
 	public void testEqualTo() throws Exception {
-		Wifi o1 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		Wifi o2 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		
-		Wifi omac = new Wifi("different", ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		Wifi ossid = new Wifi(mac, "different", authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		Wifi oauthMode = new Wifi(mac, ssid, "different", firstSeen, channel, rssi, lat, lon, alt, accuracy, type);
-		Wifi ofirstSeen = new Wifi(mac, ssid, authMode, "13/11/2017 17:43", channel, rssi, lat, lon, alt, accuracy, type);
-		Wifi ochannel = new Wifi(mac, ssid, authMode, firstSeen, 3, rssi, lat, lon, alt, accuracy, type);
-		Wifi orssi = new Wifi(mac, ssid, authMode, firstSeen, channel, 100, lat, lon, alt, accuracy, type);
-		Wifi oaccuracy = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, 100, type);
-		Wifi otype = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, "different");
+		Wifi o1 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi o2 = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		// Compare with not equal Wifi obj.
+		Wifi omac = new Wifi("different", ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi ossid = new Wifi(mac, "different", authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi oauthMode = new Wifi(mac, ssid, "different", firstSeen, channel, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi ofirstSeen = new Wifi(mac, ssid, authMode, "13/11/2017 17:43", channel, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi ochannel = new Wifi(mac, ssid, authMode, firstSeen, (double) 3, rssi, lat, lon, alt, accuracy, type, null);
+		Wifi orssi = new Wifi(mac, ssid, authMode, firstSeen, channel, (double) 100, lat, lon, alt, accuracy, type, null);
+		Wifi oaccuracy = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, (double) 100, type, null);
+		Wifi otype = new Wifi(mac, ssid, authMode, firstSeen, channel, rssi, lat, lon, alt, accuracy, "different", null);
 		assertTrue(o1.equalTo(o2));
 		assertFalse(o1.equalTo(omac));
 		assertFalse(o1.equalTo(ossid));
@@ -134,4 +134,5 @@ public class WifiTest {
 		assertFalse(o1.equalTo(otype));
 
 	}
+
 }
