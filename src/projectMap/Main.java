@@ -25,15 +25,15 @@ public class Main {
  static final String[] DBWIFITIME_HEADER_FORMAT = {"Time","ID","Lat","Lon","Alt","#WiFi networks","board","brand"};
  static final String[] HEADER_SINGLE_LIST = {"MAC","SSID","AuthMode","FirstSeen","Channel","RSSI","CurrentLatitude","CurrentLongitude","AltitudeMeters","AccuracyMeters","Type"};
  static final String FILENAME_WIGGLE_STARTSWITH = "WigleWifi";
-// DB
+
+ // DB
  static final int MAX_NUM_OF_WIFIS_IN_WIFITIMESTAMP = 10;
  static final String FILENAME_DB_STARTSWITH = "DB_";
 
-// Geo
+ // Geo
  static final int SIMILARITY_MAX_RANGE = 100;
  static final int SIMILARITY_MIN_RANGE = 0;
-
-// -- Similarity:
+ // -- Similarity:
  static final int MAX_NUM_OF_ELEMENTS_FOR_AVERAGE = 10;
  static final int MIN_NUM_OF_ELEMENTS_FOR_SIMILARITY = 1;
  static final int ALGO2_POWER = 2;
@@ -46,7 +46,6 @@ public class Main {
 //------------------------ No Input conventions  ------------------------//
  static final int NO_INPUT_INT = Integer.MIN_VALUE;
  static final String NO_INPUT_STRING = "        N/A         ";
-
 
 // FileNames (Resulted)
  static final String FILE_NAME_TOP_WIFIS = "Top "+MAX_NUM_OF_WIFIS_IN_WIFITIMESTAMP+" Wifis";
