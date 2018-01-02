@@ -32,6 +32,8 @@ Extends FileHandler.class and functions as a "layer" above it to handle .csv fil
 #### KmlFile.class
 Extends FileHandler.class and functions as a "layer" above it to handle .kml files demands.
 
+
+
 ## DataBase usage
 Database files are generated from a 'DBWifiTime' object and can be written to a file using CsvFile.class, or via the DBWifiTime object itself (calls CsvFile methods).
 
